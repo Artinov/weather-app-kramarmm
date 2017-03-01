@@ -1,20 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<link rel="stylesheet" href="./css/style.css">
 	<title>Weather App</title>
 </head>
 <body>
-	<h1 id="cityName"></h1>
-	<h3 id="time"></h3>
+	<div class="wrapper">
+		<div class="wether-information">
+			<div class="icon">
+				<img src="">
+			</div>
+			<div class="left">
+				<div class="temperature">
+					<div class="temp"><span id="the_temp"></span></div>
+					<div class="o">&nbsp; o</div>
+					<div class="C">C</div>
+				</div>
+				<h2 id="cityName"></h2>
+				<h3 id="continent"> </h3>
+				<h5 id="time"></h5>
+				<h5 id="currentDate"></h5>
+			</div>
+			<div class="values">
+				<h4>Humidity</h4>
+				<h4>Wind</h4>
+				<h4>Cloud</h4>
+				<div id="humidity"></div>
+				<div id="wind"></div>
+				<div id="cloud"></div>
+			</div>
+		</div>
+		<span class="choose">Choose your city</span>
 
-	<h4>Humidity: <span id="humidity"></span></h4>
-	<h4>Predictability: <span id="predictability"></span>%</h4>
-	<h4>Temperature: <span id="the_temp"></span></h4>
-	<h4>Weather: <span id="weather_state_name"></span></h4>
-	<h4>Wind speed: <span id="wind_speed"></span></h4>
-
-
-	<script type="text/javascript" src="./index.js"></script>
+		<svg class="line" width="268px" height="4px" viewBox="0 0 268 4">
+			<defs>
+		    <linearGradient id="Gradient1">
+			        <stop class="stop1" offset="0%"/>
+			        <stop class="stop2" offset="100%"/>
+		    </linearGradient>
+			</defs>
+            <rect rect x="0" y="0" width="268" height="4"></rect>
+          </svg>
+		<div class="input">
+			<input id="selectCity" type="text"/>
+			</select>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="./scripts/index.js"></script>
 
 </body>
 </html>

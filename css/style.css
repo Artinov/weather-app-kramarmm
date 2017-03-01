@@ -1,0 +1,150 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto Condensed', sans-serif;
+	color: #CD8B6E;
+}
+
+body {
+    background-image: url('../images/Weather_app_1.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center; 
+}
+
+.wrapper {
+	width: 1084px;
+	left: calc(50% - 542px);
+	position: absolute;
+}
+
+.wrapper .wether-information {
+	width: 700px;
+	height: 380px;
+	background-color: black;
+	float: right;
+	margin-top: 50px;
+	  background-image: -moz-linear-gradient( 45deg, rgb(60,33,24) 0%, rgb(43,51,28) 49%, rgb(39,46,56) 100%);
+	  background-image: -webkit-linear-gradient( 45deg, rgb(60,33,24) 0%, rgb(43,51,28) 49%, rgb(39,46,56) 100%);
+	  background-image: -ms-linear-gradient( 45deg, rgb(60,33,24) 0%, rgb(43,51,28) 49%, rgb(39,46,56) 100%);
+	  opacity: 0.902;
+}
+
+.wrapper .wether-information .left {
+	text-align: left;
+	margin-left: 70px;
+}
+
+.wrapper .wether-information .left .temperature {
+	width: 600px;
+}
+
+.wrapper .wether-information .left .temperature div {
+	vertical-align: top;
+	display: inline-block;
+	font-weight: 700;
+	color: #FFA48A;
+}
+
+.wrapper .wether-information .left .temperature .temp {
+  font-size: 200px;
+} 
+
+.wrapper .wether-information .left .temperature .temp span{
+  color: #FFA48A;
+}
+
+.wrapper .wether-information .left .temperature .o {
+	font-size: 2em;
+	margin-top: 35px;
+} 
+
+.wrapper .wether-information .left .temperature .C {
+	font-size: 4em;
+	margin-top: 35px;
+} 
+
+#cityName {
+	font-size: 40px;
+	color: #FCF9EB;
+	display: inline-block;
+	margin-right: 10px;
+	font-weight: 300;
+}
+
+#continent{
+	display: inline-block;
+	color: #CD8B6E;
+	font-weight: 300;
+}
+
+#time{
+	color: #CD8B6E;
+	margin: 10px 0;	
+}
+
+#currentDate {
+	color: #CD8B6E;
+	margin: 10px 0;		
+}
+
+
+
+
+.wrapper .wether-information .values {
+	float: right;
+	margin-right: 70px;
+	width: 300px;
+	text-align: center;
+	margin-top: -77px;
+}
+
+.wrapper .wether-information .values h4, .wrapper .wether-information .values div {
+		display: inline-block;
+		width: 97px;
+		margin: 10px 0;
+}
+
+.wrapper .wether-information .values div {
+	color: #FCF9EB;
+}
+
+.icon {
+	float: right;
+	margin: 103px 185px 0 0;
+}
+
+#selectCity {
+	margin-top: 550px;
+	background-color: rgba(26,29,12,0.9);
+	outline: none; 
+	border-collapse: collapse;
+	border: 2px solid rgba(26,29,12,0.9);
+	width: 223px;
+	height: 49px;
+	padding-left: 10px;
+	font-size: 2em;
+}
+
+.line {
+	position: absolute;
+	top: 546px;
+	fill: url(#Gradient1)
+}
+
+.stop1 { 
+	stop-color: #FF0128;
+}
+
+.stop2 {
+	stop-color: #FFBA02;
+}
+
+.choose {
+	position: absolute;
+	top: 509px;
+	left: 112px;
+	font-size: 1.5em;
+	color: #FCF9EB;
+
+}
