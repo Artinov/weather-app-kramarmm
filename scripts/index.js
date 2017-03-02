@@ -1,5 +1,6 @@
 
 var the_temp = document.querySelector("#the_temp");
+var icons = document.querySelectorAll("img");
 
 var cityName = document.querySelector("#cityName");
 var continent = document.querySelector("#continent");
@@ -9,15 +10,32 @@ var currentDate = document.querySelector("#currentDate");
 var humidity = document.querySelector("#humidity");
 var wind = document.querySelector("#wind");
 var cloud = document.querySelector("#cloud");
-var icons = document.querySelectorAll("img");
-
 
 var select = document.querySelector("#selectCity");
 var serverResponse;
+var geoResponse;
 
-select.onchange = function() {
+
+window.onload = function (){
 
 	var xhttp = new XMLHttpRequest();
+
+	xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+    		geoResponse = JSON.parse(this.responseText.slice(2, this.responseText.length - 2));
+    		var event = new Event('change');
+			select.dispatchEvent(event);
+	    };
+	};
+		xhttp.open("GET", "http://ip-api.com/json?callback=?", true);
+		xhttp.send();
+};
+
+
+select.onchange = function () {
+
+	var xhttp = new XMLHttpRequest();
+
 	xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
     		serverResponse = JSON.parse(this.responseText);
@@ -32,7 +50,6 @@ select.onchange = function() {
 			continent.innerText = serverResponse.location.country;
 
 			time.innerText = serverResponse.location.localtime.split(" ")[1];
-
 
 			var month;
 			switch (serverResponse.location.localtime.split(/-|\:| /g)[1]){
@@ -74,9 +91,8 @@ select.onchange = function() {
 					break;
 			};
 
-
 			var day = (parseInt(serverResponse.location.localtime.split(/-|\:| /g)[1]) + parseInt(serverResponse.location.localtime.split(/-|\:| /g)[2]) + parseInt(serverResponse.location.localtime.split(/-|\:| /g)[0])) % 7;
-			console.log(day);
+			
 			switch (day){
 				case 1:
 					day = "Saturday";
@@ -110,8 +126,12 @@ select.onchange = function() {
 	    };
 	};
 
-	xhttp.open("GET", "https://intense-beach-78744.herokuapp.com/?city=" + select.value, true);
-	xhttp.send();
+
+	if (select.value != "") {
+		xhttp.open("GET", "https://intense-beach-78744.herokuapp.com/?city=" + select.value, true);
+		xhttp.send();
+	} else {
+		xhttp.open("GET", "https://intense-beach-78744.herokuapp.com/?city=" + geoResponse.regionName, true);
+		xhttp.send();
+	};
 };
-
-
